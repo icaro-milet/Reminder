@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Reminder
+
+  Created by milet on 11/06/25.
+  
+*/
+
+
+/* MARK: - Login Screen */
+"login.label.title" = "Entre para acessar suas receitas";
+"login.email.placeholder" = "email@exemplo.com";
+"login.password.placeholder" = "senha";
+"login.button.title" = "Entrar";
+
+/* MARK: - Home Screen */
+
+/* MARK: - Receipts Screen */
+
+/* MARK: - NewReceipts Screen */
