@@ -35,7 +35,7 @@ extension ReminderFlowController: LoginBottomSheetFlowDelegate {
         let viewController = UIViewController()
         viewController.view.backgroundColor = .cyan
         
-        self.navigationController?.pushViewController(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: false)
     }
 }
 
