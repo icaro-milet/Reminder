@@ -1,23 +1,24 @@
 # 🛎️ Reminder
 
-A minimalist iOS reminder app built with Swift and SwiftUI, designed to help users stay organized and on schedule.
+A minimalist iOS reminder medications app built with Swift and UIKit, designed to help users stay organized and on schedule.
 
 
 ## 🚀 Features
 
-- Create, update, and delete reminders
+- Reminders for medications
 - Set specific dates and times
-- Receive local notifications
 - Persistent storage using Core Data
-- Beautiful and responsive UI with SwiftUI
-- Support for Light and Dark Mode
+- Authentication via Firebase
+- Using MVVM-C
+- Using UserDefaults to save cached data
 
 ## 🧪 Technologies Used
 
-- **Swift 5**
-- **SwiftUI**
+- **Swift**
+- **UIKit**
 - **Core Data**
-- **UserNotifications Framework**
+- **Firebase**
+- **Cocoapods**
 - **Xcode**
 
 ## 📦 Getting Started
