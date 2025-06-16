@@ -50,5 +50,14 @@ extension ReminderFlowController: SplashFlowDelegate {
         navigationController?.present(loginBottomSheet, animated: false){
             loginBottomSheet.animateShow()
         }
+        
+        func navigateToHome() {
+            self.navigationController?.dismiss(animated: true)
+            
+            let viewController = UIViewController()
+            viewController.view.backgroundColor = .cyan
+            
+            self.navigationController?.pushViewController(viewController, animated: false)
+        }
     }
 }
