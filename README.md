@@ -7,7 +7,6 @@ A minimalist iOS reminder medications app built with Swift and UIKit, designed t
 
 - Reminders for medications
 - Set specific dates and times
-- Persistent storage using Core Data
 - Authentication via Firebase
 - Using MVVM-C
 - Using UserDefaults to save cached data
