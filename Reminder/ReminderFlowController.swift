@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ReminderFlowController {
+class ReminderFlowController: HomeFlowDelegate {
     // MARK: - Properties
     private var navigationController: UINavigationController?
     private let viewControllersFactory: ViewControllersFactoryProtocol
@@ -32,8 +32,7 @@ extension ReminderFlowController: LoginBottomSheetFlowDelegate {
     func navigateToHome() {
         self.navigationController?.dismiss(animated: true)
         
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = .cyan
+        let viewController = viewControllersFactory.makeHomeViewController(flowDelegate: self)
         
         self.navigationController?.pushViewController(viewController, animated: false)
     }
