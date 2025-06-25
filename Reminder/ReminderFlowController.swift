@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class ReminderFlowController: HomeFlowDelegate {
+    
     // MARK: - Properties
     private var navigationController: UINavigationController?
     private let viewControllersFactory: ViewControllersFactoryProtocol
@@ -24,6 +25,15 @@ class ReminderFlowController: HomeFlowDelegate {
         self.navigationController = UINavigationController(rootViewController: startViewController)
         
         return navigationController
+    }
+    
+    func navigateToRecipes() {
+        //
+    }
+    
+    func logout() {
+        self.navigationController?.popViewController(animated: true)
+        self.openLoginBottomSheet()
     }
 }
 
