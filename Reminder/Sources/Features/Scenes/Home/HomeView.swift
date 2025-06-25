@@ -11,7 +11,7 @@ class HomeView: UIView {
     
     let profileBackground: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = Colors.gray600
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -19,9 +19,9 @@ class HomeView: UIView {
     
     let contentBackground: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = Metrics.medium
         view.layer.masksToBounds = true
-        view.backgroundColor = .white
+        view.backgroundColor = Colors.gray800
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -31,7 +31,7 @@ class HomeView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 35
+        imageView.layer.cornerRadius = Metrics.huge
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         return imageView
@@ -39,8 +39,8 @@ class HomeView: UIView {
     
     let welcomeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Boas vindas"
-        label.textColor = .black
+        label.text = "home.welcome.label".localized
+        label.textColor = Colors.gray200
         label.font = Typography.input
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -49,8 +49,8 @@ class HomeView: UIView {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
-        label.font = Typography.subHeading
+        label.textColor = Colors.gray100
+        label.font = Typography.heading
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -58,9 +58,9 @@ class HomeView: UIView {
     
     let feedbackButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Avaliar", for: .normal)
-        button.backgroundColor = .black
-        button.layer.cornerRadius = 12
+        button.setTitle("home.feedback.button.title".localized, for: .normal)
+        button.backgroundColor = Colors.gray100
+        button.layer.cornerRadius = Metrics.medium
         button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -70,7 +70,7 @@ class HomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        self.backgroundColor = .gray
+        self.backgroundColor = Colors.gray600
     }
     
     required init?(coder: NSCoder) {
@@ -94,17 +94,17 @@ class HomeView: UIView {
             profileBackground.topAnchor.constraint(equalTo: topAnchor),
             profileBackground.leadingAnchor.constraint(equalTo: leadingAnchor),
             profileBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
-            profileBackground.heightAnchor.constraint(equalToConstant: 300),
+            profileBackground.heightAnchor.constraint(equalToConstant: Metrics.backgroundProfileSize),
             
-            profileImage.topAnchor.constraint(equalTo: profileBackground.topAnchor, constant: 48),
-            profileImage.leadingAnchor.constraint(equalTo: profileBackground.leadingAnchor, constant: 24),
-            profileImage.heightAnchor.constraint(equalToConstant: 68),
-            profileImage.widthAnchor.constraint(equalToConstant: 68),
+            profileImage.topAnchor.constraint(equalTo: profileBackground.topAnchor, constant: Metrics.huge),
+            profileImage.leadingAnchor.constraint(equalTo: profileBackground.leadingAnchor, constant: Metrics.medium),
+            profileImage.heightAnchor.constraint(equalToConstant: Metrics.profileImageSize),
+            profileImage.widthAnchor.constraint(equalToConstant: Metrics.profileImageSize),
             
-            welcomeLabel.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 12),
+            welcomeLabel.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: Metrics.small),
             welcomeLabel.leadingAnchor.constraint(equalTo: profileImage.leadingAnchor),
             
-            nameLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 4),
+            nameLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: Metrics.tiny),
             nameLabel.leadingAnchor.constraint(equalTo: welcomeLabel.leadingAnchor),
             
             contentBackground.topAnchor.constraint(equalTo: profileBackground.bottomAnchor),
@@ -112,9 +112,10 @@ class HomeView: UIView {
             contentBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentBackground.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            feedbackButton.bottomAnchor.constraint(equalTo: contentBackground.bottomAnchor, constant: -24),
-            feedbackButton.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: 24),
-            feedbackButton.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -24)
+            feedbackButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize),
+            feedbackButton.bottomAnchor.constraint(equalTo: contentBackground.bottomAnchor, constant: -Metrics.medium),
+            feedbackButton.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
+            feedbackButton.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium)
         ])
     }
     
