@@ -10,11 +10,14 @@ class HomeViewController: UIViewController {
     
     let contentView: HomeView
     let flowDelegate: HomeFlowDelegate
+    let viewModel: HomeViewModel
     
     init(contentView: HomeView,
-         flowDelegate: HomeFlowDelegate) {
+         flowDelegate: HomeFlowDelegate,
+         viewModel: HomeViewModel) {
         self.contentView = contentView
         self.flowDelegate = flowDelegate
+        self.viewModel = HomeViewModel()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -26,6 +29,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setup()
         setupNavigationBar()
+        checkForExistingData()
     }
     
     private func setupNavigationBar() {
@@ -56,6 +60,12 @@ class HomeViewController: UIViewController {
     private func logoutAction() {
         UserDefaultsManager.removeUser()
         self.flowDelegate.logout()
+    }
+    
+    func checkForExistingData() {
+        if let user = UserDefaultsManager.loadUser() {
+            contentView.nameTextField.text = UserDefaultsManager.loadUserName()
+        }
     }
 }
 

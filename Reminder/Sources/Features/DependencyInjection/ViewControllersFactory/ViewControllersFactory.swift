@@ -27,7 +27,8 @@ final class ViewControllersFactory: ViewControllersFactoryProtocol {
     func makeHomeViewController(flowDelegate: HomeFlowDelegate) -> HomeViewController {
         let contentView = HomeView()
         let viewController = HomeViewController(contentView: contentView,
-                                                flowDelegate: flowDelegate)
+                                                flowDelegate: flowDelegate,
+                                                viewModel: HomeViewModel())
         
         return viewController
     }
