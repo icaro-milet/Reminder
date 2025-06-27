@@ -70,6 +70,15 @@ class HomeView: UIView {
         return button
     }()
     
+    let newPrescriptionButton: ButtonHomeView = {
+        let button = ButtonHomeView(icon: UIImage(named: "Pills"),
+                                    title: "Nova receita",
+                                    description: "Cadastre novos lembretes")
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     let feedbackButton: UIButton = {
         let button = UIButton()
         button.setTitle("home.feedback.button.title".localized, for: .normal)
@@ -101,6 +110,7 @@ class HomeView: UIView {
         addSubview(contentBackground)
         contentBackground.addSubview(feedbackButton)
         contentBackground.addSubview(myPrescriptionsButton)
+        contentBackground.addSubview(newPrescriptionButton)
         
         setupConstraints()
         setupImageGesture()
@@ -137,7 +147,12 @@ class HomeView: UIView {
             myPrescriptionsButton.topAnchor.constraint(equalTo: contentBackground.topAnchor, constant: Metrics.huge),
             myPrescriptionsButton.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
             myPrescriptionsButton.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium),
-            myPrescriptionsButton.heightAnchor.constraint(equalToConstant: 112)
+            myPrescriptionsButton.heightAnchor.constraint(equalToConstant: 112),
+            
+            newPrescriptionButton.topAnchor.constraint(equalTo: myPrescriptionsButton.bottomAnchor, constant: Metrics.medium),
+            newPrescriptionButton.leadingAnchor.constraint(equalTo: myPrescriptionsButton.leadingAnchor),
+            newPrescriptionButton.trailingAnchor.constraint(equalTo: myPrescriptionsButton.trailingAnchor),
+            newPrescriptionButton.heightAnchor.constraint(equalTo: myPrescriptionsButton.heightAnchor)
         ])
     }
     

@@ -41,6 +41,7 @@ class ButtonHomeView: UIView {
         label.font = Typography.body
         label.textColor = Colors.gray200
         label.numberOfLines = 0
+        label.textAlignment = .natural
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
