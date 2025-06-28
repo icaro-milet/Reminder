@@ -21,14 +21,16 @@ class ReminderFlowController: HomeFlowDelegate {
     
     // MARK: - startFlow
     func start() -> UINavigationController? {
-        let startViewController = /*viewControllersFactory.makeSplashViewController(flowDelegate: self)*/ NewReceiptViewController()
+        let startViewController = viewControllersFactory.makeSplashViewController(flowDelegate: self)
         self.navigationController = UINavigationController(rootViewController: startViewController)
         
         return navigationController
     }
     
     func navigateToRecipes() {
-        //
+        let recipesViewController = viewControllersFactory.makeNewRecipesViewController()
+        self.navigationController?.pushViewController(recipesViewController, animated: true)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func logout() {
