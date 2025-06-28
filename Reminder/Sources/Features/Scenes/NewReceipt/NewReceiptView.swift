@@ -52,6 +52,11 @@ class NewReceiptView: UIView {
         return button
     }()
     
+    let remedyInput = InputView(title: "Remédio", placeholder: "Nome do medicamento")
+    let timeInput = InputView(title: "horário", placeholder: "12:00")
+    let recurrenceInput = InputView(title: "Recorrência", placeholder: "Selecione")
+    let takeNowCheckBox = CustomCheckbox(title: "Tomar agora")
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -65,6 +70,10 @@ class NewReceiptView: UIView {
         addSubview(backButton)
         addSubview(titleLabel)
         addSubview(descriptionLabel)
+        addSubview(remedyInput)
+        addSubview(timeInput)
+        addSubview(recurrenceInput)
+        addSubview(takeNowCheckBox)
         addSubview(addButton)
         
         setupConstraints()
@@ -82,6 +91,22 @@ class NewReceiptView: UIView {
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Metrics.small),
             descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
+            
+            remedyInput.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: Metrics.medium),
+            remedyInput.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
+            remedyInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
+            
+            timeInput.topAnchor.constraint(equalTo: remedyInput.bottomAnchor, constant: Metrics.medium),
+            timeInput.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
+            timeInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
+            
+            recurrenceInput.topAnchor.constraint(equalTo: timeInput.bottomAnchor, constant: Metrics.medium),
+            recurrenceInput.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
+            recurrenceInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
+            
+            takeNowCheckBox.topAnchor.constraint(equalTo: recurrenceInput.bottomAnchor, constant: Metrics.medium),
+            takeNowCheckBox.leadingAnchor.constraint(equalTo: recurrenceInput.leadingAnchor),
+            takeNowCheckBox.trailingAnchor.constraint(equalTo: recurrenceInput.trailingAnchor),
             
             addButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
