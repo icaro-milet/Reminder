@@ -9,7 +9,7 @@ import Foundation
 import SQLite3
 
 class DBHelper {
-    static let DBHelper = DBHelper()
+    static let share = DBHelper()
     private var db: OpaquePointer?
     
     private init() {
