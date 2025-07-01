@@ -10,6 +10,7 @@ import UIKit
 
 class ReminderFlowController: HomeFlowDelegate {
     
+    
     // MARK: - Properties
     private var navigationController: UINavigationController?
     private let viewControllersFactory: ViewControllersFactoryProtocol
@@ -30,6 +31,19 @@ class ReminderFlowController: HomeFlowDelegate {
     func navigateToRecipes() {
         let recipesViewController = viewControllersFactory.makeNewRecipesViewController()
         self.navigationController?.pushViewController(recipesViewController, animated: true)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+//    func navigateToMyRecipes() {
+//        let recipesViewController = viewControllersFactory.makeMyRecipesViewController()
+//        
+//        self.navigationController?.pushViewController(recipesViewController, animated: true)
+//        self.navigationController?.navigationBar.isHidden = true
+//    }
+    
+    func navigateToMyReceipts() {
+        let myReceiptsViewController = viewControllersFactory.makeMyRecipesViewController(flowDelegate: self)
+        self.navigationController?.pushViewController(myReceiptsViewController, animated: true)
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -71,4 +85,13 @@ extension ReminderFlowController: SplashFlowDelegate {
             self.navigationController?.pushViewController(viewController, animated: false)
         }
     }
+}
+
+// MARK: - MyReceipts
+extension ReminderFlowController: MyReceiptsFlowDelegate {
+    func goToNewReceipts() {
+        //
+    }
+    
+    
 }

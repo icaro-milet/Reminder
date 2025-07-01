@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 final class ViewControllersFactory: ViewControllersFactoryProtocol {
+    
     func makeNewRecipesViewController() -> NewReceiptViewController {
         let viewController = NewReceiptViewController()
         
@@ -35,6 +36,14 @@ final class ViewControllersFactory: ViewControllersFactoryProtocol {
         let viewController = HomeViewController(contentView: contentView,
                                                 flowDelegate: flowDelegate,
                                                 viewModel: HomeViewModel())
+        
+        return viewController
+    }
+    
+    func makeMyRecipesViewController(flowDelegate: any MyReceiptsFlowDelegate) -> MyReceiptsViewController {
+        let contentView = MyReceiptsView()
+        let viewController = MyReceiptsViewController(contentView: contentView,
+                                                      flowDelegate: flowDelegate)
         
         return viewController
     }

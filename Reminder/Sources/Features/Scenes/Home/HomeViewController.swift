@@ -61,6 +61,10 @@ class HomeViewController: UIViewController {
         contentView.newPrescriptionButton.tapAction = { [weak self] in
             self?.didTapNewPrescriptionButton()
         }
+        
+        contentView.myPrescriptionsButton.tapAction = { [weak self] in
+            self?.didTapMyPrescriptions()
+        }
     }
     
     @objc
@@ -84,6 +88,9 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewDelegate {
     func didTapProfileImage() {
         selectProfileImage()
+    }
+    func didTapMyPrescriptions() {
+        flowDelegate.navigateToMyReceipts()
     }
     
     func didTapNewPrescriptionButton() {
