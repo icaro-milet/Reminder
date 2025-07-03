@@ -34,13 +34,6 @@ class ReminderFlowController: HomeFlowDelegate {
         self.navigationController?.navigationBar.isHidden = true
     }
     
-//    func navigateToMyRecipes() {
-//        let recipesViewController = viewControllersFactory.makeMyRecipesViewController()
-//        
-//        self.navigationController?.pushViewController(recipesViewController, animated: true)
-//        self.navigationController?.navigationBar.isHidden = true
-//    }
-    
     func navigateToMyReceipts() {
         let myReceiptsViewController = viewControllersFactory.makeMyRecipesViewController(flowDelegate: self)
         self.navigationController?.pushViewController(myReceiptsViewController, animated: true)
@@ -89,8 +82,12 @@ extension ReminderFlowController: SplashFlowDelegate {
 
 // MARK: - MyReceipts
 extension ReminderFlowController: MyReceiptsFlowDelegate {
+    func popScreen() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func goToNewReceipts() {
-        //
+        self.navigateToRecipes()
     }
     
     

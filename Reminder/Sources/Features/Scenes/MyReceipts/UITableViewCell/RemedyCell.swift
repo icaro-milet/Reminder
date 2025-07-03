@@ -12,6 +12,8 @@ class RemedyCell: UITableViewCell {
     
     static let identifier = "RemedyCell"
     
+    var onDelete: (() -> Void)?
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = Typography.subHeading
@@ -76,6 +78,7 @@ class RemedyCell: UITableViewCell {
         let image = UIImage(named: "trash")
         
         button.setImage(image, for: .normal)
+        button.addTarget(self, action: #selector(trashButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -148,6 +151,11 @@ class RemedyCell: UITableViewCell {
             
             contentView.bottomAnchor.constraint(equalTo: timeBackgroundView.bottomAnchor, constant: Metrics.medium)
         ])
+    }
+    
+    @objc
+    private func trashButtonTapped() {
+        onDelete?()
     }
     
     func configure(title: String, time: String, recurrence: String) {

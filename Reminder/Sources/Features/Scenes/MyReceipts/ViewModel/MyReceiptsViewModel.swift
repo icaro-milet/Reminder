@@ -12,4 +12,8 @@ class MyReceiptsViewModel {
     func fetchData() -> [Medicine] {
         return DBHelper.share.fetchReceipts()
     }
+    
+    func deleteReceipt(byId id: Int) {
+        DBHelper.share.deleteReceipt(byId: id)
+    }
 }
