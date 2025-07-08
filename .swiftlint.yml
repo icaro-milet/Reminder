@@ -1,9 +1,9 @@
 disabled_rules:
-    - line_lenght
+  - line_lenght
 included:
-    - Reminder
+  - Reminder
 excluded:
-    - Podes
-    - Carthage
-    - fastlane
-    - Tests
+  - Podes
+  - Carthage
+  - fastlane
+  - Tests

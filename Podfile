@@ -9,4 +9,5 @@ target 'Reminder' do
   pod 'Firebase/Auth'
   pod 'SQLite.swift'
   pod 'lottie-ios'
+  pod 'CoreFramework', :git => 'https://github.com/icaro-milet/CoreFramework/tree/main', :tag => "0.0.1"
 end
