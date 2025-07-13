@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreFramework
 
 class MyReceiptsViewController: UIViewController {
     let contentView: MyReceiptsView

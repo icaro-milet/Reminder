@@ -1,0 +1,26 @@
+{
+  "name": "CoreFramework",
+  "version": "0.0.2",
+  "summary": "A short description of CoreFramework.",
+  "description": "Desenvolvido para ser uma biblioteca de desenvolvimento para o app Reminder",
+  "homepage": "https://github.com/icaro-milet/CoreFramework",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "icaro milet": "icaro@teste.com"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "swift_versions": [
+    "5.0"
+  ],
+  "source": {
+    "git": "https://github.com/icaro-milet/CoreFramework"
+  },
+  "source_files": "CoreFramework/Sources/**/*.{swift,h}",
+  "exclude_files": "Classes/Exclude",
+  "swift_version": "5.0"
+}

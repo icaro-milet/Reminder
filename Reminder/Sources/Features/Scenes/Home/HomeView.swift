@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreFramework
 
 class HomeView: UIView {
     weak public var delegate: HomeViewDelegate?
@@ -79,22 +80,36 @@ class HomeView: UIView {
         return button
     }()
     
-    let feedbackButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("home.feedback.button.title".localized, for: .normal)
-        button.backgroundColor = Colors.gray100
-        button.layer.cornerRadius = Metrics.medium
-        button.setTitleColor(.white, for: .normal)
+    let feedbackButton: CustomButton = {
+        let starImage = UIImage(named: "star") ?? UIImage()
+        let button = CustomButton(title: "home.feedback.button.title".localized,
+                                  icon: starImage,
+                                  iconPosition: .horizontal,
+                                  backgroundColor: Colors.gray100)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
     }()
+    
+// -------------------------- COMO ERA ANTES ----------------------------------
+//    let feedbackButton: UIButton = {
+//        let button = UIButton()
+//        button.setTitle("home.feedback.button.title".localized, for: .normal)
+//        button.backgroundColor = Colors.gray100
+//        button.layer.cornerRadius = Metrics.medium
+//        button.setTitleColor(.white, for: .normal)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        return button
+//    }()
+// -----------------------------------------------------------------------------
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
         setupTextField()
         self.backgroundColor = Colors.gray600
+        feedbackButton.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -188,5 +203,15 @@ extension HomeView: UITextFieldDelegate {
         UserDefaultsManager.saveUserName(name: userName)
         
         return true
+    }
+}
+
+extension HomeView: CustomButtonDelegate {
+    func buttonAction() {
+        if let url = URL(string: "http://www.google.com/"),
+           UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+            
     }
 }

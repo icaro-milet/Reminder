@@ -1,4 +1,5 @@
 PODS:
+  - CoreFramework (0.0.2)
   - Firebase/Auth (11.14.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 11.14.0)
@@ -52,6 +53,7 @@ PODS:
   - SQLite.swift/standard (0.15.4)
 
 DEPENDENCIES:
+  - CoreFramework (from `https://github.com/icaro-milet/CoreFramework`)
   - Firebase/Auth
   - lottie-ios
   - SQLite.swift
@@ -71,7 +73,17 @@ SPEC REPOS:
     - RecaptchaInterop
     - SQLite.swift
 
+EXTERNAL SOURCES:
+  CoreFramework:
+    :git: https://github.com/icaro-milet/CoreFramework
+
+CHECKOUT OPTIONS:
+  CoreFramework:
+    :commit: 85f8530e375af6856c34de0aa44e4c8834f566b3
+    :git: https://github.com/icaro-milet/CoreFramework
+
 SPEC CHECKSUMS:
+  CoreFramework: 89d1545a8b952f3cb7c77fa934a83a9d945cf1c5
   Firebase: 38f818b36ca01648fa78ec7402b4ee3076086c2b
   FirebaseAppCheckInterop: a92ba81d0ee3c4cddb1a2e52c668ea51dc63c3ae
   FirebaseAuth: 657b7e792d60e9fdb87408ae5ed15f4438442c1d
@@ -85,6 +97,6 @@ SPEC CHECKSUMS:
   RecaptchaInterop: 11e0b637842dfb48308d242afc3f448062325aba
   SQLite.swift: a107c734115fea616a4ad31371d39f1637e8de56
 
-PODFILE CHECKSUM: 3d9ccf762e320f7ba9cc89e88af9717623f3af4d
+PODFILE CHECKSUM: e7f5d1d6bfcf529ec438ad7edd0ae1b44228e7a1
 
 COCOAPODS: 1.16.2
