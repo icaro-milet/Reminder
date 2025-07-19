@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Lottie
+import CoreFramework
 
 class NewReceiptViewController: UIViewController {
     private let newReceiptView = NewReceiptView()
@@ -28,6 +29,7 @@ class NewReceiptViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupActions()
+        presentOnboarding()
     }
     
     private func setupView() {
@@ -98,6 +100,19 @@ class NewReceiptViewController: UIViewController {
                 self?.successAnimationView.isHidden = true
                 self?.clearFieldsAndResetButton()
             }
+        }
+    }
+    
+    private func presentOnboarding() {
+        if !UserDefaultsManager.hasSeenOnboarding() {
+            let onboardingView = OnboardingView()
+            let steps = [
+                (UIImage(named: "welcome-onboarding"), "Bem-vindo ao onboarding do Reminder"),
+                (UIImage(named: "image2"), "Simples para cadastrar remédios"),
+            ]
+            
+            onboardingView.presentOnboarding(on: view, with: steps)
+            UserDefaultsManager.markOnboardingSeen()
         }
     }
 }

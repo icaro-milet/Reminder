@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5071713AC8B77A1447BB289C /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A78E901503845EC1C37983 /* Pods_Reminder.framework */; };
+		4A74E13C5E5096A012A87D67 /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1518F8A1954F883E8384985 /* Pods_Reminder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C1BB94CA97AE2A7D9940FDA /* Pods-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.release.xcconfig"; sourceTree = "<group>"; };
 		129638A62DF640F4000EEEE8 /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F9B9E423C7D420A20A07C43 /* Pods-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.debug.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
-		98A78E901503845EC1C37983 /* Pods_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		736E0FEBF4D2B8F2EE2BC1B5 /* Pods-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.debug.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
+		EAFB034BAF9B634019AD4712 /* Pods-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.release.xcconfig"; sourceTree = "<group>"; };
+		F1518F8A1954F883E8384985 /* Pods_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5071713AC8B77A1447BB289C /* Pods_Reminder.framework in Frameworks */,
+				4A74E13C5E5096A012A87D67 /* Pods_Reminder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +56,7 @@
 				129638A82DF640F4000EEEE8 /* Reminder */,
 				129638A72DF640F4000EEEE8 /* Products */,
 				401F6FA2F26F7C748EECA64A /* Pods */,
-				4FC73322A122003ECD5209D9 /* Frameworks */,
+				69C347067089641B304A9828 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,16 +71,16 @@
 		401F6FA2F26F7C748EECA64A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2F9B9E423C7D420A20A07C43 /* Pods-Reminder.debug.xcconfig */,
-				0C1BB94CA97AE2A7D9940FDA /* Pods-Reminder.release.xcconfig */,
+				736E0FEBF4D2B8F2EE2BC1B5 /* Pods-Reminder.debug.xcconfig */,
+				EAFB034BAF9B634019AD4712 /* Pods-Reminder.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		4FC73322A122003ECD5209D9 /* Frameworks */ = {
+		69C347067089641B304A9828 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				98A78E901503845EC1C37983 /* Pods_Reminder.framework */,
+				F1518F8A1954F883E8384985 /* Pods_Reminder.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -92,12 +92,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 129638B92DF640F4000EEEE8 /* Build configuration list for PBXNativeTarget "Reminder" */;
 			buildPhases = (
-				FE883159F9AE589FE9BA0B6E /* [CP] Check Pods Manifest.lock */,
+				F09C4D96ED65EAFD2F164537 /* [CP] Check Pods Manifest.lock */,
 				129638A22DF640F4000EEEE8 /* Sources */,
 				128ADE7C2E1C039200419AC5 /* SwiftLint */,
 				129638A32DF640F4000EEEE8 /* Frameworks */,
 				129638A42DF640F4000EEEE8 /* Resources */,
-				87DBBAFB9EB99EFCCE54447C /* [CP] Copy Pods Resources */,
+				1499231FA938FBF2FC1FD982 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,7 +174,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# SwiftLint Run Script — Build Phases\n# SwiftLint Run Script — Build Phases\n#export PATH=\"/opt/homebrew/bin:$PATH\"\n\n#if [[ \"$(uname -m)\" == \"arm64\" ]]; then\n # arch -arm64 swiftlint || true          # não quebra o build se houver violações\n#else\n  #swiftlint || true\n#fi\n";
 		};
-		87DBBAFB9EB99EFCCE54447C /* [CP] Copy Pods Resources */ = {
+		1499231FA938FBF2FC1FD982 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -191,7 +191,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FE883159F9AE589FE9BA0B6E /* [CP] Check Pods Manifest.lock */ = {
+		F09C4D96ED65EAFD2F164537 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -228,7 +228,7 @@
 /* Begin XCBuildConfiguration section */
 		129638BA2DF640F4000EEEE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F9B9E423C7D420A20A07C43 /* Pods-Reminder.debug.xcconfig */;
+			baseConfigurationReference = 736E0FEBF4D2B8F2EE2BC1B5 /* Pods-Reminder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -256,7 +256,7 @@
 		};
 		129638BB2DF640F4000EEEE8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C1BB94CA97AE2A7D9940FDA /* Pods-Reminder.release.xcconfig */;
+			baseConfigurationReference = EAFB034BAF9B634019AD4712 /* Pods-Reminder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreFramework
 
 class NewReceiptView: UIView {
     
@@ -56,6 +57,7 @@ class NewReceiptView: UIView {
     let timeInput = InputView(title: "horário", placeholder: "12:00")
     let recurrenceInput = InputView(title: "Recorrência", placeholder: "Selecione")
     let takeNowCheckBox = CustomCheckbox(title: "Tomar agora")
+   
     
     let timePicker: UIDatePicker = {
         let picker = UIDatePicker()
@@ -124,8 +126,7 @@ class NewReceiptView: UIView {
             
             remedyInput.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: Metrics.medium),
             remedyInput.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
-            remedyInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
-            
+            remedyInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),            
             timeInput.topAnchor.constraint(equalTo: remedyInput.bottomAnchor, constant: Metrics.medium),
             timeInput.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             timeInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
@@ -137,6 +138,8 @@ class NewReceiptView: UIView {
             takeNowCheckBox.topAnchor.constraint(equalTo: recurrenceInput.bottomAnchor, constant: Metrics.medium),
             takeNowCheckBox.leadingAnchor.constraint(equalTo: recurrenceInput.leadingAnchor),
             takeNowCheckBox.trailingAnchor.constraint(equalTo: recurrenceInput.trailingAnchor),
+            takeNowCheckBox.heightAnchor.constraint(equalToConstant: 24),
+            takeNowCheckBox.widthAnchor.constraint(equalToConstant: 24),
             
             addButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),

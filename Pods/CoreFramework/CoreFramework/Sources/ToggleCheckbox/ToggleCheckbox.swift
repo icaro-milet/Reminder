@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 public class ToggleCheckbox: UIButton {
-    private var isChecked: Bool = false
+    public var isChecked: Bool = false
     private let checkedImage = UIImage(named: "checkedCheckbox")
     private let uncheckedImage = UIImage(named: "uncheckedCheckbox")
     

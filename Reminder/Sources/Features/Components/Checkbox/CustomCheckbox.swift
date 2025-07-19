@@ -7,8 +7,9 @@
 
 import Foundation
 import UIKit
+import CoreFramework
 
-class CustomCheckbox: UIView {
+public class CustomCheckbox: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -19,10 +20,8 @@ class CustomCheckbox: UIView {
         return label
     }()
     
-    private let checkbox: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "square"), for: .normal)
-        button.tintColor = Colors.gray400
+    private let checkbox: ToggleCheckbox = {
+        let button = ToggleCheckbox()
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button

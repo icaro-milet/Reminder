@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import LocalAuthentication
 
 class SplashViewController: UIViewController {
     
@@ -35,7 +36,7 @@ class SplashViewController: UIViewController {
     
     private func decideNavigationFlow() {
         if let user = UserDefaultsManager.loadUser(), user.isUserSaved {
-            flowDelegate?.navigateToHome()
+            user.hasFaceIdEnabled ? authenticateWithFaceId() : flowDelegate?.navigateToHome()
         } else {
             showLoginBottomSheet()
         }
@@ -86,5 +87,31 @@ extension SplashViewController {
             self.contentView.logoImageView.transform = self.contentView.logoImageView
                 .transform.translatedBy(x: 0, y: -150)
         })
+    }
+}
+
+// MARK: - Face Id configuration
+extension SplashViewController {
+    private func authenticateWithFaceId() {
+        let context = LAContext()
+        var authError: NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics,
+                                     error: &authError){
+            let reason = "Autentique-se para acessar o app"
+            
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason){
+                success, evaluateError in
+                DispatchQueue.main.sync {
+                    if success {
+                        self.flowDelegate?.navigateToHome()
+                    } else {
+                        self.showLoginBottomSheet()
+                    }
+                }
+            }
+        } else {
+            showLoginBottomSheet()
+        }
     }
 }
